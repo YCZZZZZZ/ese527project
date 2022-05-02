@@ -5,19 +5,11 @@ Detection <- function (x, k = 0.05 * nrow(x), cutoff = 0.95, Method = "euclidean
 {
   data = x
   cnumber = dim(x)[2]
-  #out = OutlierDetection::maha(x, cutoff = 0.95)$"Location of Outlier"
-  #out = OutlierDetection::nn(x, k = 0.05 * nrow(x), cutoff = 0.95, 
-  #                           Method = "euclidean", rnames = F)$"Location of Outlier"
   out = outliers::scores(x, type = 'z', prob = 0.95)
   if(statistic == F){
     out<-out
   }
   else{
-    #o10 <- outliers::scores(x, type = 'z', prob = 0.95)
-    #for(i in 1:cnumber){
-    #  o10[,i] <- as.numeric(o10[,i])
-    #}
-    #out10 <- as.numeric(row.names(x[which(rowSums(o10)!=0), ]))
     o11 <- outliers::scores(x, type = 'mad', prob = 0.95)
     for(i in 1:cnumber){
       o11[,i] <- as.numeric(o11[,i])
@@ -98,8 +90,6 @@ Detection <- function (x, k = 0.05 * nrow(x), cutoff = 0.95, Method = "euclidean
   }
   return(l)
 }
-
-
 
 weatherData <- rbind(weather_train0, weather_train2, weather_train3, 
                      weather_train4, weather_train6, weather_train8, 
