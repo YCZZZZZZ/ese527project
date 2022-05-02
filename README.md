@@ -22,9 +22,9 @@ Link: https://www.kaggle.com/competitions/ashrae-energy-prediction/data
 
 ### 2. To Find Different Modeling Stages
 
-1. Data Loading: 
+1. Data Loading: loading_dataset.R
 
-2. Pre-processing (outlier detection): preProcessing2.py
+2. Pre-processing (outlier detection): preprocessing1_outlierDetection.R, preProcessing2.py
 
 3. Model training including feature selection and hyper-parameter tuning: Model Training.py
 
